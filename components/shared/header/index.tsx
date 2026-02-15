@@ -5,7 +5,7 @@ import { SearchBar } from "./SearchBar";
 
 export const Header = () => {
   return (
-    <div className="text-6xl">
+    <div className="text-6xl flex items-center">
       <div className="flex items-center">
         <Image
           src="/logo.svg"

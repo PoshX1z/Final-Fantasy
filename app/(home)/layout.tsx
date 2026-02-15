@@ -7,12 +7,12 @@ export default function HomeLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen flex flex-col">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen flex flex-col px-10">
+      <div>
         <Header />
       </div>
-      <main className="flex-1 max-w-7xl mx-auto">{children}</main>
-      <footer className="mx-auto">
+      <main className="flex-1">{children}</main>
+      <footer>
         <Footer />
       </footer>
     </div>

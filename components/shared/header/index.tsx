@@ -8,7 +8,7 @@ import Navbar from "./Navbar";
 export const Header = () => {
   return (
     <div className="text-6xl">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between py-2">
         <div className="flex items-center">
           <Image
             src="/logo.svg"
@@ -19,10 +19,10 @@ export const Header = () => {
           />
           <Link href="/">{APP_NAME}</Link>
         </div>
-        <div>
+        <div className="flex-1 mx-10">
           <SearchBar />
         </div>
-        <div>
+        <div className="mx-10">
           <Menu />
         </div>
       </div>

@@ -6,7 +6,7 @@ export const SearchBar = () => {
       <input
         type="text"
         placeholder="Search game..."
-        className="border border-white rounded-lg p-2 pl-10"
+        className="border border-white rounded-lg p-2 pl-10 w-full"
       />
       <SearchIcon className="absolute left-2" />
     </div>

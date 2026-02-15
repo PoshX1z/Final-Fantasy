@@ -2,10 +2,11 @@ import { APP_NAME } from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { SearchBar } from "./SearchBar";
+import Menu from "./Menu";
 
 export const Header = () => {
   return (
-    <div className="text-6xl flex items-center">
+    <div className="text-6xl flex items-center justify-between">
       <div className="flex items-center">
         <Image
           src="/logo.svg"
@@ -18,6 +19,9 @@ export const Header = () => {
       </div>
       <div>
         <SearchBar />
+      </div>
+      <div>
+        <Menu />
       </div>
     </div>
   );

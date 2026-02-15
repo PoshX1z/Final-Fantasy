@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const Footer = () => {
   return (
-    <div className="text-5xl flex gap-28 items-baseline absolute bottom-0">
+    <div className="text-5xl flex gap-28 items-baseline">
       <div className="flex flex-col gap-5">
         <div className="flex items-center">
           <Image src="/logo.svg" width={70} height={70} alt="logo" />

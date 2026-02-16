@@ -3,14 +3,22 @@
 :root {
   --background: #000000;
   --foreground: #ffffff;
+  --primary: #1d90dd;
+  --secondary: #e7b246;
+  --accent: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --accent: var(--accent);
 }
 
 body {
   background-image: url("/bg.png");
   color: var(--foreground);
+  font-size: 60px;
+  padding: 0 40px;
 }

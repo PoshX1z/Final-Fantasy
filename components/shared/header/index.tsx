@@ -7,7 +7,7 @@ import Navbar from "./Navbar";
 
 export const Header = () => {
   return (
-    <div className="text-6xl">
+    <div>
       <div className="flex items-center justify-between py-2">
         <div className="flex items-center">
           <Image

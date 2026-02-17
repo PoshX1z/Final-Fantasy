@@ -1,5 +1,21 @@
-import React from "react";
+import ProductCard from "../product/ProductCard";
 
 export const FeaturedGame = () => {
-  return <div>FeaturedGame</div>;
+  return (
+    <div>
+      <div className="grid grid-cols-5 gap-5">
+        <ProductCard type={2} />
+        <ProductCard type={2} />
+        <ProductCard type={2} />
+        <ProductCard type={2} />
+        <ProductCard type={2} />
+        <ProductCard type={2} />
+        <ProductCard type={2} />
+        <ProductCard type={2} />
+        <ProductCard type={2} />
+        <ProductCard type={2} />
+        <ProductCard type={2} />
+      </div>
+    </div>
+  );
 };

@@ -12,7 +12,7 @@ export default function HomeLayout({
         <Header />
       </div>
       <main className="flex-1">{children}</main>
-      <footer>
+      <footer className="mt-80">
         <Footer />
       </footer>
     </div>

@@ -1,5 +1,6 @@
 import Hero from "@/components/shared/home/Hero";
 import { Promotion } from "@/components/shared/home/Promotion";
+import { Quest } from "@/components/shared/home/Quest";
 import { Wallet } from "@/components/shared/home/Wallet";
 
 export default function Home() {
@@ -14,6 +15,9 @@ export default function Home() {
         <div className="p-10">
           <Wallet />
         </div>
+      </div>
+      <div className="flex">
+        <Quest />
       </div>
     </div>
   );

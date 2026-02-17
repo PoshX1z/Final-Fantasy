@@ -1,3 +1,4 @@
+import { Event } from "@/components/shared/home/Event";
 import Hero from "@/components/shared/home/Hero";
 import { Promotion } from "@/components/shared/home/Promotion";
 import { Quest } from "@/components/shared/home/Quest";
@@ -16,8 +17,9 @@ export default function Home() {
           <Wallet />
         </div>
       </div>
-      <div className="flex">
+      <div className="flex pt-10 gap-10">
         <Quest />
+        <Event />
       </div>
     </div>
   );

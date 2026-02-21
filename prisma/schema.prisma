@@ -33,7 +33,7 @@ model Product{
   delivery String
   tag String?
   createdAt DateTime @default(now())
-  updateAt DateTime @updateAt
+  updateAt DateTime @updatedAt
 }
 
 enum ProductCategory{
@@ -52,9 +52,9 @@ Platformer
 Survival
 Horror
 Stealth
-Open World
+OpenWorld
 MMO
-Battle Royald
-Story Telling
+BattleRoyald
+StoryTelling
 Rhythm
 }

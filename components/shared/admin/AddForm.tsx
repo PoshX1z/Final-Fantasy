@@ -250,8 +250,14 @@ export const AddForm = () => {
           <option value="account">Account</option>
         </select>
       </div>
-
+      <button
+        type="submit"
+        className="bg-primary hover:brightness-50 active:brightness-100"
+      >
+        Add Product
+      </button>
       {/* TODO: ReleaseDate, Images */}
+      {/* Improve: implement react hook form */}
     </form>
   );
 };

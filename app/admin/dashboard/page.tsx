@@ -1,6 +1,4 @@
-import React from "react";
-
-export default function page() {
+export default function DashboardAdminPage() {
   return (
     <div>
       <h1 className="text-7xl">Dashboard</h1>

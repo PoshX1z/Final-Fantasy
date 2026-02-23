@@ -7,7 +7,7 @@ export const SideBar = () => {
         <Link href="/admin/dashboard">
           <li>Dashboard</li>
         </Link>
-        <Link href="/admin/allProducts">
+        <Link href="/admin/product">
           <li>Products</li>
         </Link>
         <Link href="/admin/edit">

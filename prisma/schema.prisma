@@ -31,7 +31,7 @@ model Product{
   review Int
   countInStock Int
   numSales Int
-  delivery String
+  delivery ProductDeliveryType @default(key)
   createdAt DateTime @default(now())
   updateAt DateTime @updatedAt
 }
@@ -76,4 +76,8 @@ enum ProductEdition{
   gold
   silver
   platinum
+}
+enum ProductDeliveryType{
+  key
+  account
 }

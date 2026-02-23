@@ -20,7 +20,7 @@ export const AddForm = () => {
     review: 1,
     countInStock: 1,
     numSales: 1,
-    delivery: "",
+    delivery: "key",
   });
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -231,19 +231,25 @@ export const AddForm = () => {
         }}
         className="border-2 p-2 text-5xl"
       />
-      <input
-        type="text"
-        placeholder="Delivery Type..."
-        value={form.delivery}
-        onChange={(e) => {
-          const delivery = e.target.value;
-          setForm({
-            ...form,
-            delivery,
-          });
-        }}
-        className="border-2 p-2 text-5xl"
-      />
+
+      <div>
+        <label htmlFor="delivery-select">Select Delivery Type</label>
+        <select
+          value={form.delivery}
+          id="delivery-select"
+          onChange={(e) => {
+            const delivery = e.target.value;
+            setForm({
+              ...form,
+              delivery,
+            });
+          }}
+          className="border-2 bg-black"
+        >
+          <option value="key">Key</option>
+          <option value="account">Account</option>
+        </select>
+      </div>
 
       {/* TODO: ReleaseDate, Images */}
     </form>

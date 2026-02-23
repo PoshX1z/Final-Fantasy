@@ -7,19 +7,19 @@ export const AddForm = () => {
     name: "",
     slug: "",
     description: "",
-    price: 0,
+    price: 1,
     image: "/product-image.jpg",
-    category: "",
+    category: "action",
     tag: "",
-    platform: "",
-    platformImageIcon: "",
-    edition: "",
+    platform: "ea",
+    platformImageIcon: "/images/ea-icons.png",
+    edition: "normal",
     developer: "",
     publisher: "",
     releaseDate: "01-01-2025",
-    review: 0,
-    countInStock: 0,
-    numSales: 0,
+    review: 1,
+    countInStock: 1,
+    numSales: 1,
     delivery: "",
   });
   const handleSubmit = (e: any) => {
@@ -82,26 +82,26 @@ export const AddForm = () => {
           }}
           className="border-2 bg-black"
         >
-          <option value="Action">Action</option>
-          <option value="Adventure">Adventure</option>
-          <option value="RPG">RPG</option>
-          <option value="JRPG">JRPG</option>
-          <option value="Strategy">Strategy</option>
-          <option value="Simulation">Simulation</option>
-          <option value="Sports">Sports</option>
-          <option value="Racing">Racing</option>
-          <option value="Fighting">Fighting</option>
-          <option value="Shooter">Shooter</option>
-          <option value="Puzzle">Puzzle</option>
-          <option value="Platformer">Platformer</option>
-          <option value="Survival">Survival</option>
-          <option value="Horror">Horror</option>
-          <option value="Stealth">Stealth</option>
-          <option value="OpenWorld">OpenWorld</option>
-          <option value="MMO">MMO</option>
-          <option value="BattleRoyald">BattleRoyald</option>
-          <option value="StoryTelling">StoryTelling</option>
-          <option value="Rhythm">Rhythm</option>
+          <option value="action">Action</option>
+          <option value="adventure">Adventure</option>
+          <option value="rpg">RPG</option>
+          <option value="jrpg">JRPG</option>
+          <option value="strategy">Strategy</option>
+          <option value="simulation">Simulation</option>
+          <option value="sports">Sports</option>
+          <option value="racing">Racing</option>
+          <option value="fighting">Fighting</option>
+          <option value="shooter">Shooter</option>
+          <option value="puzzle">Puzzle</option>
+          <option value="platformer">Platformer</option>
+          <option value="survival">Survival</option>
+          <option value="horror">Horror</option>
+          <option value="stealth">Stealth</option>
+          <option value="openWorld">OpenWorld</option>
+          <option value="mmo">MMO</option>
+          <option value="battleRoyald">BattleRoyald</option>
+          <option value="storyTelling">StoryTelling</option>
+          <option value="rhythm">Rhythm</option>
         </select>
       </div>
       <input
@@ -142,6 +142,110 @@ export const AddForm = () => {
           <option value="xbox">Xbox</option>
         </select>
       </div>
+
+      <div>
+        <label htmlFor="edition-select">Select Edition</label>
+        <select
+          value={form.edition}
+          id="edition-select"
+          onChange={(e) => {
+            const edition = e.target.value;
+            setForm({
+              ...form,
+              edition,
+            });
+          }}
+          className="border-2 bg-black"
+        >
+          <option value="normal">Normal Edition</option>
+          <option value="deluxe">Deluxe Edition</option>
+          <option value="ultimate">Ultimate Edition</option>
+          <option value="premium">Premium Edition</option>
+          <option value="gold">Gold Edition</option>
+          <option value="silver">Silver Edition</option>
+          <option value="platinum">Platinum Edition</option>
+        </select>
+      </div>
+      <input
+        type="text"
+        placeholder="Developer..."
+        value={form.developer}
+        onChange={(e) => {
+          const developer = e.target.value;
+          setForm({
+            ...form,
+            developer,
+          });
+        }}
+        className="border-2 p-2 text-5xl"
+      />
+      <input
+        type="text"
+        placeholder="Publisher..."
+        value={form.publisher}
+        onChange={(e) => {
+          const publisher = e.target.value;
+          setForm({
+            ...form,
+            publisher,
+          });
+        }}
+        className="border-2 p-2 text-5xl"
+      />
+      <input
+        type="number"
+        placeholder="Review..."
+        value={form.review}
+        onChange={(e) => {
+          const review = parseFloat(e.target.value);
+          setForm({
+            ...form,
+            review,
+          });
+        }}
+        className="border-2 p-2 text-5xl"
+      />
+      <input
+        type="number"
+        placeholder="Count in Stock..."
+        value={form.countInStock}
+        onChange={(e) => {
+          const countInStock = parseFloat(e.target.value);
+          setForm({
+            ...form,
+            countInStock,
+          });
+        }}
+        className="border-2 p-2 text-5xl"
+      />
+      <input
+        type="number"
+        placeholder="Number of Sales..."
+        value={form.numSales}
+        onChange={(e) => {
+          const numSales = parseFloat(e.target.value);
+          setForm({
+            ...form,
+            numSales,
+          });
+        }}
+        className="border-2 p-2 text-5xl"
+      />
+      <input
+        type="text"
+        placeholder="Delivery Type..."
+        value={form.delivery}
+        onChange={(e) => {
+          const delivery = e.target.value;
+          setForm({
+            ...form,
+            delivery,
+          });
+        }}
+        className="border-2 p-2 text-5xl"
+      />
+
+      {/* TODO: ReleaseDate, Images */}
     </form>
   );
 };

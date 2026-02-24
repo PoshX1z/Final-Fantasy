@@ -36,6 +36,7 @@ export const AddForm = () => {
       <input
         type="text"
         placeholder="Product Name..."
+        name="name"
         value={form.name}
         onChange={(e) => {
           const name = e.target.value;
@@ -45,12 +46,12 @@ export const AddForm = () => {
             slug: toSlug(name),
           });
         }}
-        name="name"
         className="border-2 p-2 text-5xl"
       />
       <input
         type="text"
         placeholder="Description..."
+        name="slug"
         value={form.description}
         onChange={(e) => {
           const description = e.target.value;
@@ -64,6 +65,7 @@ export const AddForm = () => {
       <input
         type="number"
         placeholder="Price..."
+        name="price"
         value={form.price}
         onChange={(e) => {
           const price = parseFloat(e.target.value);
@@ -77,6 +79,7 @@ export const AddForm = () => {
       <div>
         <label htmlFor="category-select">Select Category</label>
         <select
+          name="category"
           value={form.category}
           id="category-select"
           onChange={(e) => {
@@ -113,6 +116,7 @@ export const AddForm = () => {
       <input
         type="text"
         placeholder="Tag..."
+        name="tag"
         value={form.tag}
         onChange={(e) => {
           const tag = e.target.value;
@@ -126,6 +130,7 @@ export const AddForm = () => {
       <div>
         <label htmlFor="platform-select">Select Platform</label>
         <select
+          name="platform"
           value={form.platform}
           id="platform-select"
           onChange={(e) => {
@@ -152,6 +157,7 @@ export const AddForm = () => {
       <div>
         <label htmlFor="edition-select">Select Edition</label>
         <select
+          name="edition"
           value={form.edition}
           id="edition-select"
           onChange={(e) => {
@@ -175,6 +181,7 @@ export const AddForm = () => {
       <input
         type="text"
         placeholder="Developer..."
+        name="developer"
         value={form.developer}
         onChange={(e) => {
           const developer = e.target.value;
@@ -188,6 +195,7 @@ export const AddForm = () => {
       <input
         type="text"
         placeholder="Publisher..."
+        name="publisher"
         value={form.publisher}
         onChange={(e) => {
           const publisher = e.target.value;
@@ -201,6 +209,7 @@ export const AddForm = () => {
       <input
         type="number"
         placeholder="Review..."
+        name="review"
         value={form.review}
         onChange={(e) => {
           const review = parseFloat(e.target.value);
@@ -214,6 +223,7 @@ export const AddForm = () => {
       <input
         type="number"
         placeholder="Count in Stock..."
+        name="countInStock"
         value={form.countInStock}
         onChange={(e) => {
           const countInStock = parseFloat(e.target.value);
@@ -227,6 +237,7 @@ export const AddForm = () => {
       <input
         type="number"
         placeholder="Number of Sales..."
+        name="numSales"
         value={form.numSales}
         onChange={(e) => {
           const numSales = parseFloat(e.target.value);
@@ -241,6 +252,7 @@ export const AddForm = () => {
       <div>
         <label htmlFor="delivery-select">Select Delivery Type</label>
         <select
+          name="delivery"
           value={form.delivery}
           id="delivery-select"
           onChange={(e) => {

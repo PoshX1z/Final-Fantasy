@@ -1,4 +1,5 @@
 "use client";
+
 import { toSlug } from "@/lib/utils";
 import { useState } from "react";
 
@@ -25,9 +26,13 @@ export const AddForm = () => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
   };
-  console.log(form);
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col gap-5"
+      action="/api/product"
+      method="POST"
+    >
       <input
         type="text"
         placeholder="Product Name..."
@@ -40,6 +45,7 @@ export const AddForm = () => {
             slug: toSlug(name),
           });
         }}
+        name="name"
         className="border-2 p-2 text-5xl"
       />
       <input

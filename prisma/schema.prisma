@@ -19,15 +19,15 @@ model Product{
   slug String @unique
   description String
   price Int
-  image Bytes
+  image String
   category ProductCategory @default(action)
   tag String?
   platform ProductPlatform @default(steam)
   platformImageIcon String
-  edition ProductEdition @default(normal)
+  edition ProductEdition @default(standard)
   developer String
   publisher String
-  releaseDate DateTime
+  releaseDate String
   review Int
   countInStock Int
   numSales Int
@@ -69,7 +69,7 @@ enum ProductPlatform{
   xbox
 }
 enum ProductEdition{
-  normal
+  standard
   deluxe
   ultimate
   premium

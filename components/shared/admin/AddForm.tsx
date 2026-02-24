@@ -14,10 +14,10 @@ export const AddForm = () => {
     tag: "",
     platform: "ea",
     platformImageIcon: "/images/ea-icons.png",
-    edition: "normal",
+    edition: "standard",
     developer: "",
     publisher: "",
-    releaseDate: "01-01-2025",
+    releaseDate: "2025-01-12",
     review: 1,
     countInStock: 1,
     numSales: 1,
@@ -27,12 +27,7 @@ export const AddForm = () => {
     e.preventDefault();
   };
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex flex-col gap-5"
-      action="/api/product"
-      method="POST"
-    >
+    <form className="flex flex-col gap-5" action="/api/product" method="POST">
       <input
         type="text"
         placeholder="Product Name..."
@@ -51,7 +46,7 @@ export const AddForm = () => {
       <input
         type="text"
         placeholder="Description..."
-        name="slug"
+        name="description"
         value={form.description}
         onChange={(e) => {
           const description = e.target.value;
@@ -169,7 +164,7 @@ export const AddForm = () => {
           }}
           className="border-2 bg-black"
         >
-          <option value="normal">Normal Edition</option>
+          <option value="standard">Standard Edition</option>
           <option value="deluxe">Deluxe Edition</option>
           <option value="ultimate">Ultimate Edition</option>
           <option value="premium">Premium Edition</option>
@@ -206,6 +201,7 @@ export const AddForm = () => {
         }}
         className="border-2 p-2 text-5xl"
       />
+
       <input
         type="number"
         placeholder="Review..."
@@ -268,6 +264,64 @@ export const AddForm = () => {
           <option value="account">Account</option>
         </select>
       </div>
+
+      {/* from this line is temporary, just make it works, will delete and implement it later */}
+      <input
+        type="text"
+        placeholder="Image ..."
+        name="image"
+        value={form.image}
+        onChange={(e) => {
+          const image = e.target.value;
+          setForm({
+            ...form,
+            image,
+          });
+        }}
+        className="border-2 p-2 text-5xl"
+      />
+      <input
+        type="text"
+        placeholder="Release Date..."
+        name="releaseDate"
+        value={form.releaseDate}
+        onChange={(e) => {
+          const releaseDate = e.target.value;
+          setForm({
+            ...form,
+            releaseDate,
+          });
+        }}
+        className="border-2 p-2 text-5xl"
+      />
+      <input
+        type="text"
+        placeholder="Platform Image Icon..."
+        name="platformImageIcon"
+        value={form.platformImageIcon}
+        onChange={(e) => {
+          const platformImageIcon = e.target.value;
+          setForm({
+            ...form,
+            platformImageIcon,
+          });
+        }}
+        className="border-2 p-2 text-5xl"
+      />
+      <input
+        type="text"
+        placeholder="Slug..."
+        name="slug"
+        value={form.slug}
+        onChange={(e) => {
+          const slug = e.target.value;
+          setForm({
+            ...form,
+            slug,
+          });
+        }}
+        className="border-2 p-2 text-5xl"
+      />
       <button
         type="submit"
         className="bg-primary hover:brightness-50 active:brightness-100"

@@ -25,9 +25,21 @@ export const AddForm = () => {
   });
   const handleSubmit = (e: any) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    fetch("/api/product", {
+      method: "POST",
+      body: formData,
+    });
   };
+
   return (
-    <form className="flex flex-col gap-5" action="/api/product" method="POST">
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col gap-5"
+      action="/api/product"
+      method="POST"
+    >
       <input
         type="text"
         placeholder="Product Name..."
@@ -39,6 +51,21 @@ export const AddForm = () => {
             ...form,
             name,
             slug: toSlug(name),
+          });
+        }}
+        className="border-2 p-2 text-5xl"
+      />
+      <input
+        type="text"
+        placeholder="Slug..."
+        name="slug"
+        value={form.slug}
+        readOnly
+        onChange={(e) => {
+          const slug = e.target.value;
+          setForm({
+            ...form,
+            slug,
           });
         }}
         className="border-2 p-2 text-5xl"
@@ -148,7 +175,21 @@ export const AddForm = () => {
           <option value="xbox">Xbox</option>
         </select>
       </div>
-
+      <input
+        type="text"
+        placeholder="Platform Image Icon..."
+        name="platformImageIcon"
+        readOnly
+        value={form.platformImageIcon}
+        onChange={(e) => {
+          const platformImageIcon = e.target.value;
+          setForm({
+            ...form,
+            platformImageIcon,
+          });
+        }}
+        className="border-2 p-2 text-5xl"
+      />
       <div>
         <label htmlFor="edition-select">Select Edition</label>
         <select
@@ -265,7 +306,6 @@ export const AddForm = () => {
         </select>
       </div>
 
-      {/* from this line is temporary, just make it works, will delete and implement it later */}
       <input
         type="text"
         placeholder="Image ..."
@@ -294,41 +334,13 @@ export const AddForm = () => {
         }}
         className="border-2 p-2 text-5xl"
       />
-      <input
-        type="text"
-        placeholder="Platform Image Icon..."
-        name="platformImageIcon"
-        value={form.platformImageIcon}
-        onChange={(e) => {
-          const platformImageIcon = e.target.value;
-          setForm({
-            ...form,
-            platformImageIcon,
-          });
-        }}
-        className="border-2 p-2 text-5xl"
-      />
-      <input
-        type="text"
-        placeholder="Slug..."
-        name="slug"
-        value={form.slug}
-        onChange={(e) => {
-          const slug = e.target.value;
-          setForm({
-            ...form,
-            slug,
-          });
-        }}
-        className="border-2 p-2 text-5xl"
-      />
       <button
         type="submit"
         className="bg-primary hover:brightness-50 active:brightness-100"
       >
         Add Product
       </button>
-      {/* TODO: ReleaseDate, Images */}
+      {/* TODO: images */}
       {/* Improve: implement react hook form */}
     </form>
   );

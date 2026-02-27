@@ -1,33 +1,21 @@
 "use client";
 
 import { APP_BASE_URL } from "@/lib/constants";
+import { uploadFile } from "@/lib/db/supabase";
 
 export const TestComponent = () => {
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
-
-    const formData = new FormData();
-    formData.append("name", name);
-
-    const res = await fetch(`${APP_BASE_URL}/api/product`, {
-      method: "POST",
-      body: formData,
-    });
-
-    console.log("Response received");
-
-    const data = await res.json();
-    console.log(data);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const formImg = formData.get("image");
+    console.log(formImg);
+    uploadFile(formImg);
   };
   return (
     <div>
-      <form
-        action="/api/product
-      "
-        onSubmit={handleSubmit}
-        method="POST"
-      >
-        <input type="text" name="name" placeholder="enter name..." />
+      <form onSubmit={handleSubmit}>
+        <input type="file" name="image" />
         <button type="submit">submit</button>
       </form>
     </div>

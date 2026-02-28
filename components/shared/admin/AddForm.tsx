@@ -1,5 +1,6 @@
 "use client";
 
+import { supabase, uploadFile } from "@/lib/db/supabase";
 import { toSlug } from "@/lib/utils";
 import { useState } from "react";
 
@@ -9,7 +10,7 @@ export const AddForm = () => {
     slug: "",
     description: "",
     price: 1,
-    image: "/product-image.jpg",
+    image: "",
     category: "action",
     tag: "",
     platform: "ea",
@@ -23,6 +24,7 @@ export const AddForm = () => {
     numSales: 1,
     delivery: "key",
   });
+  console.log("normal form", form);
   const handleSubmit = (e: any) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -31,6 +33,20 @@ export const AddForm = () => {
       method: "POST",
       body: formData,
     });
+
+    const formImage = formData.get("image") as File;
+    const imageName = `${Date.now()}-${formImage.name}`;
+    const imageUrl = supabase.storage
+      .from("products")
+      .getPublicUrl(`/images/${imageName}`).data.publicUrl;
+    console.log(imageUrl);
+
+    setForm({
+      ...form,
+      imageUrl,
+    });
+    console.log("form", form);
+    console.log("formData", formData);
   };
 
   return (
@@ -306,20 +322,7 @@ export const AddForm = () => {
         </select>
       </div>
 
-      <input
-        type="text"
-        placeholder="Image ..."
-        name="image"
-        value={form.image}
-        onChange={(e) => {
-          const image = e.target.value;
-          setForm({
-            ...form,
-            image,
-          });
-        }}
-        className="border-2 p-2 text-5xl"
-      />
+      <input type="file" name="image" className="border-2 p-2 text-5xl" />
       <input
         type="text"
         placeholder="Release Date..."
@@ -340,7 +343,6 @@ export const AddForm = () => {
       >
         Add Product
       </button>
-      {/* TODO: images */}
       {/* Improve: implement react hook form */}
     </form>
   );

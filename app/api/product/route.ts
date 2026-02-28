@@ -26,6 +26,7 @@ export async function POST(req: NextRequest) {
   const review = Number(formData.get("review"));
   const publisher = formData.get("publisher") as string;
   const delivery = formData.get("delivery") as string;
+  console.log(image);
   await prisma.product.create({
     data: {
       name,

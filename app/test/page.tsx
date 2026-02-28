@@ -11,12 +11,6 @@ export default async function TestPage() {
   return (
     <div>
       <TestComponent />
-      <Image
-        src="https://dkxltfphdclulxxjpsiq.supabase.co/storage/v1/object/public/products/images/gil.png"
-        alt="test"
-        width={200}
-        height={200}
-      />
     </div>
   );
 }

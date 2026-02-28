@@ -4,7 +4,7 @@ import { supabase, uploadFile } from "@/lib/db/supabase";
 import { toSlug } from "@/lib/utils";
 import { useState } from "react";
 
-export const AddForm = () => {
+export const AddFormBackUp = () => {
   const [form, setForm] = useState({
     name: "",
     slug: "",
@@ -29,19 +29,24 @@ export const AddForm = () => {
     e.preventDefault();
     const formUserInput = e.currentTarget;
     const formData = new FormData(formUserInput);
-    const formImage = formData.get("image") as File;
-
-    uploadFile(formImage);
-
-    const fileName = `${Date.now()}-${formImage.name}`;
-    const imageUrl = supabase.storage
-      .from("products")
-      .getPublicUrl(`/images/${fileName}`).data.publicUrl;
-    formData.set("image", imageUrl);
     fetch("/api/product", {
       method: "POST",
       body: formData,
     });
+
+    const formImage = formData.get("image") as File;
+    const imageName = `${Date.now()}-${formImage.name}`;
+    const imageUrl = supabase.storage
+      .from("products")
+      .getPublicUrl(`/images/${imageName}`).data.publicUrl;
+    console.log(imageUrl);
+
+    setForm({
+      ...form,
+      image: imageUrl,
+    });
+    console.log("form", form);
+    console.log("formData", formData);
   };
 
   return (

@@ -31,6 +31,7 @@ export const TestComponent = () => {
     const imageUrl = supabase.storage
       .from("products")
       .getPublicUrl(`/images/${imageName}`).data.publicUrl;
+    console.log(imageUrl);
     setForm({
       ...form,
       image: imageUrl,

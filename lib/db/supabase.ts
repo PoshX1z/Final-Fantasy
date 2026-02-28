@@ -1,7 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { DATABASE_ANON_KEY, SUPABASE_URL } from "../constants";
 
-const supabase = createClient(SUPABASE_URL, DATABASE_ANON_KEY);
+export const supabase = createClient(SUPABASE_URL, DATABASE_ANON_KEY);
 
 export async function uploadFile(file: File) {
   const fileName = file.name;

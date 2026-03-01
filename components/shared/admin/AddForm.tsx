@@ -17,7 +17,7 @@ export const AddForm = () => {
     price: 1,
     image: "",
     category: "action",
-    tag: "",
+    tag: "normal",
     platform: "ea",
     platformImageIcon: platformImageIconLocation("ea"),
     edition: "standard",
@@ -150,20 +150,27 @@ export const AddForm = () => {
           <option value="rhythm">Rhythm</option>
         </select>
       </div>
-      <input
-        type="text"
-        placeholder="Tag..."
-        name="tag"
-        value={form.tag}
-        onChange={(e) => {
-          const tag = e.target.value;
-          setForm({
-            ...form,
-            tag,
-          });
-        }}
-        className="border-2 p-2 text-5xl"
-      />
+      <div>
+        <label htmlFor="tag-select">Select Tag Of Product</label>
+        <select
+          name="tag"
+          value={form.tag}
+          id="category-select"
+          onChange={(e) => {
+            const tag = e.target.value;
+            setForm({
+              ...form,
+              tag,
+            });
+          }}
+          className="border-2 bg-black"
+        >
+          <option value="normal">Normal Game</option>
+          <option value="hero">Hero Banner</option>
+          <option value="promotion">Promotional Game</option>
+          <option value="featured">Featured Game</option>
+        </select>
+      </div>
       <div>
         <label htmlFor="platform-select">Select Platform</label>
         <select
@@ -191,7 +198,7 @@ export const AddForm = () => {
         </select>
       </div>
       <input
-        type="text"
+        type="hidden"
         placeholder="Platform Image Icon..."
         name="platformImageIcon"
         readOnly

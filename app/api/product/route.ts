@@ -3,6 +3,7 @@ import {
   ProductDeliveryType,
   ProductEdition,
   ProductPlatform,
+  ProductTag,
 } from "@/app/generated/prisma/enums";
 import prisma from "@/prisma/prisma";
 import { NextRequest, NextResponse } from "next/server";
@@ -14,6 +15,7 @@ export async function POST(req: NextRequest) {
   const slug = formData.get("slug") as string;
   const image = formData.get("image") as string;
   const category = formData.get("category") as string;
+  const tag = formData.get("tag") as string;
   const platform = formData.get("platform") as string;
   const platformImageIcon = formData.get("platformImageIcon") as string;
   const edition = formData.get("edition") as string;
@@ -32,6 +34,7 @@ export async function POST(req: NextRequest) {
       slug,
       image,
       category: category as ProductCategory,
+      tag: tag as ProductTag,
       platform: platform as ProductPlatform,
       platformImageIcon,
       edition: edition as ProductEdition,

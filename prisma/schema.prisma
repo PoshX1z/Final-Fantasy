@@ -21,7 +21,7 @@ model Product{
   price Int
   image String
   category ProductCategory @default(action)
-  tag String?
+  tag ProductTag @default(normal)
   platform ProductPlatform @default(steam)
   platformImageIcon String
   edition ProductEdition @default(standard)
@@ -80,4 +80,10 @@ enum ProductEdition{
 enum ProductDeliveryType{
   key
   account
+}
+enum ProductTag {
+  normal
+  hero
+  promotion
+  featured
 }

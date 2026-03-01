@@ -2,7 +2,6 @@
 import { IProductInput } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 export const AdminProductCard = ({ product }: { product: IProductInput }) => {
   const handleDelete = (e: any) => {
@@ -28,7 +27,7 @@ export const AdminProductCard = ({ product }: { product: IProductInput }) => {
       </div>
       <p>{product.name}</p>
       <div className="flex justify-between">
-        <Link href="/admin/edit/editPage">Edit</Link>
+        <Link href={`/admin/edit/editProduct/${product.slug}`}>Edit</Link>
         <form onSubmit={handleDelete}>
           <button type="submit">Delete</button>
         </form>

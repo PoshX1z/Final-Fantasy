@@ -8,3 +8,12 @@ export const getProductByTag = async (tag: any) => {
   });
   return products;
 };
+
+export const getProductBySlug = async (slug: any) => {
+  const product = await prisma.product.findFirst({
+    where: {
+      slug: slug,
+    },
+  });
+  return product;
+};

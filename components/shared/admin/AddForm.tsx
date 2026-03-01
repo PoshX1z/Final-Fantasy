@@ -343,7 +343,7 @@ export const AddForm = () => {
       >
         Add Product
       </button>
-      {/* Improve: implement react hook form */}
+      {/* Improve: implement react hook form and add zod validation */}
     </form>
   );
 };

@@ -51,3 +51,14 @@ export async function POST(req: NextRequest) {
   });
   return NextResponse.json({ success: true });
 }
+
+export async function DELETE(req: NextRequest) {
+  const slug = await req.text();
+  await prisma.product.delete({
+    where: {
+      slug: slug,
+    },
+  });
+
+  return NextResponse.json({ success: true });
+}

@@ -2,6 +2,7 @@
 
 import { supabase, uploadFile } from "@/lib/db/supabase";
 import { toSlug } from "@/lib/utils";
+import { IProductInput } from "@/types";
 import { useState } from "react";
 
 export const AddForm = () => {
@@ -10,7 +11,7 @@ export const AddForm = () => {
       .from("platform-image-icons")
       .getPublicUrl(`platform-image-icons/${platform}-icon`).data.publicUrl;
 
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<IProductInput>({
     name: "",
     slug: "",
     description: "",

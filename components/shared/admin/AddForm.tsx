@@ -5,6 +5,11 @@ import { toSlug } from "@/lib/utils";
 import { useState } from "react";
 
 export const AddForm = () => {
+  const platformImageIconLocation = (platform: string) =>
+    supabase.storage
+      .from("platform-image-icons")
+      .getPublicUrl(`platform-image-icons/${platform}-icon`).data.publicUrl;
+
   const [form, setForm] = useState({
     name: "",
     slug: "",
@@ -14,7 +19,7 @@ export const AddForm = () => {
     category: "action",
     tag: "",
     platform: "ea",
-    platformImageIcon: "/images/ea-icons.png",
+    platformImageIcon: platformImageIconLocation("ea"),
     edition: "standard",
     developer: "",
     publisher: "",
@@ -33,7 +38,7 @@ export const AddForm = () => {
 
     uploadFile(formImage);
 
-    const fileName = `${Date.now()}-${formImage.name}`;
+    const fileName = `${formImage.size}-${formImage.name}`;
     const imageUrl = supabase.storage
       .from("products")
       .getPublicUrl(`/images/${fileName}`).data.publicUrl;
@@ -43,7 +48,6 @@ export const AddForm = () => {
       body: formData,
     });
   };
-
   return (
     <form
       onSubmit={handleSubmit}
@@ -171,7 +175,7 @@ export const AddForm = () => {
             setForm({
               ...form,
               platform,
-              platformImageIcon: `/images/icons/${platform}-icon.png`,
+              platformImageIcon: platformImageIconLocation(platform),
             });
           }}
           className="border-2 bg-black"
@@ -192,13 +196,6 @@ export const AddForm = () => {
         name="platformImageIcon"
         readOnly
         value={form.platformImageIcon}
-        onChange={(e) => {
-          const platformImageIcon = e.target.value;
-          setForm({
-            ...form,
-            platformImageIcon,
-          });
-        }}
         className="border-2 p-2 text-5xl"
       />
       <div>
@@ -342,3 +339,4 @@ export const AddForm = () => {
     </form>
   );
 };
+//

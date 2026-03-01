@@ -4,7 +4,7 @@ import { DATABASE_ANON_KEY, SUPABASE_URL } from "../constants";
 export const supabase = createClient(SUPABASE_URL, DATABASE_ANON_KEY);
 
 export async function uploadFile(file: File) {
-  const fileName = `${Date.now()}-${file.name}`;
+  const fileName = `${file.size}-${file.name}`;
   const { data, error } = await supabase.storage
     .from("products")
     .upload(`images/${fileName}`, file, {

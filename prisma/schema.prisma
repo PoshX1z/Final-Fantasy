@@ -17,44 +17,73 @@ model Product{
   id String @id @default(cuid())
   name String
   slug String @unique
-  image String
-  category ProductCategory @default(Action)
-  platform String
-  platformImageIcon String
-  edition String
   description String
   price Int
+  image String
+  category ProductCategory @default(action)
+  tag ProductTag @default(normal)
+  platform ProductPlatform @default(steam)
+  platformImageIcon String
+  edition ProductEdition @default(standard)
+  developer String
+  publisher String
+  releaseDate String
+  review Int
   countInStock Int
   numSales Int
-  releaseDate String
-  developer String
-  review Int
-  publisher String
-  delivery String
-  tag String?
+  delivery ProductDeliveryType @default(key)
   createdAt DateTime @default(now())
   updateAt DateTime @updatedAt
 }
 
 enum ProductCategory{
-Action
-Adventure
-RPG
-JRPG
-Strategy
-Simulation
-Sports
-Racing
-Fighting
-Shooter
-Puzzle
-Platformer
-Survival
-Horror
-Stealth
-OpenWorld
-MMO
-BattleRoyald
-StoryTelling
-Rhythm
+action
+adventure
+rpg
+jrpg
+strategy
+simulation
+sports
+racing
+fighting
+shooter
+puzzle
+platformer
+survival
+horror
+stealth
+openWorld
+mmo
+battleRoyald
+storyTelling
+rhythm
+}
+enum ProductPlatform{
+  ea
+  epic
+  microsoft
+  nintendo
+  playstation
+  steam
+  ubisoft
+  xbox
+}
+enum ProductEdition{
+  standard
+  deluxe
+  ultimate
+  premium
+  gold
+  silver
+  platinum
+}
+enum ProductDeliveryType{
+  key
+  account
+}
+enum ProductTag {
+  normal
+  hero
+  promotion
+  featured
 }

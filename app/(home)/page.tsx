@@ -1,17 +1,25 @@
 import { Event } from "@/components/shared/home/Event";
-import { FeaturedGame } from "@/components/shared/home/FeaturedGame";
 import Hero from "@/components/shared/home/Hero";
-import { Promotion } from "@/components/shared/home/Promotion";
 import { Quest } from "@/components/shared/home/Quest";
 import { Wallet } from "@/components/shared/home/Wallet";
+import ProductCard from "@/components/shared/product/ProductCard";
+import { PromotionalProductCard } from "@/components/shared/product/PromotionalProductCard";
+import { getProductByTag } from "@/prisma/actions/product.actions";
 
-export default function Home() {
+export default async function Home() {
+  const promotionalProduct = await getProductByTag("promotion");
+  const featuredProduct = await getProductByTag("featured");
   return (
     <div className="pt-5 flex flex-col items-center justify-center">
       <Hero />
       <div className="flex">
         <div>
-          <Promotion />
+          <h1>Promotional Games</h1>
+          <div className="flex gap-10">
+            {promotionalProduct.map((product) => (
+              <PromotionalProductCard key={product.slug} product={product} />
+            ))}
+          </div>
         </div>
         <div className="p-10">
           <Wallet />
@@ -22,7 +30,10 @@ export default function Home() {
         <Event />
       </div>
       <div>
-        <FeaturedGame />
+        <h1>Featured Games</h1>
+        {featuredProduct.map((product) => (
+          <ProductCard key={product.slug} product={product} />
+        ))}
       </div>
     </div>
   );

@@ -1,52 +1,32 @@
+import { IProductInput } from "@/types";
 import Image from "next/image";
 
-const ProductCard = ({ type }: { type: number }) => {
+const ProductCard = ({ product }: { product: IProductInput }) => {
   return (
     <div>
-      {type == 1 ? (
+      <div className="text-5xl border-2 border-primary max-w-80">
         <div>
-          <div className="flex gap-5">
-            <div className="border-primary border-2 max-w-73">
-              <Image
-                src="/product-image2.jpg"
-                width={292}
-                height={292}
-                alt="product-image"
-              />
-              <div className="flex justify-between px-2">
-                <p>
-                  <span>30</span> %
-                </p>
-                <p>
-                  <span>2400</span> Gil
-                </p>
-              </div>
-            </div>
-          </div>
+          <Image
+            src={product.image}
+            width={292}
+            height={292}
+            alt={product.name}
+          />
         </div>
-      ) : type == 2 ? (
-        <div className="text-5xl border-2 border-primary">
-          <div>
-            <Image
-              src="/product-image2.jpg"
-              width={292}
-              height={292}
-              alt="product-image"
-            />
-          </div>
-          <h1>Final Fantasy VII Remake</h1>
-          <p>JRPG/Action</p>
-          <p>
-            2400 <span>Gil</span>
-          </p>
-          <div>
-            <button className="bg-primary p-2">Buy Now</button>
-            <button className="bg-secondary p-2">Add to Cart</button>
-          </div>
+        <h1>{product.name}</h1>
+        <p>{product.category}</p>
+        <p>
+          {product.price} <span>Gil</span>
+        </p>
+        <div className="flex gap-5">
+          <button className="bg-primary p-5 hover:brightness-90 active:brightness-75">
+            Buy Now
+          </button>
+          <button className="bg-secondary p-5 hover:brightness-90 active:brightness-75">
+            Add to Cart
+          </button>
         </div>
-      ) : (
-        <div>type else</div>
-      )}
+      </div>
     </div>
   );
 };

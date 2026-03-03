@@ -2,7 +2,7 @@ import React from "react";
 
 export const SidebarStore = () => {
   return (
-    <div>
+    <div className="bg-primary h-screen">
       <h1>Filter</h1>
 
       <div>
@@ -37,12 +37,12 @@ export const SidebarStore = () => {
               <input
                 type="text"
                 placeholder="from..."
-                className="w-32 border-2 border-primary"
+                className="w-32 border-2 border-secondary"
               />
               <input
                 type="text"
                 placeholder="to..."
-                className="w-32 border-2 border-primary"
+                className="w-32 border-2 border-secondary"
               />
             </div>
             <button className="border-2 border-primary">Search</button>

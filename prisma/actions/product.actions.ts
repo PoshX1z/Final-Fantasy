@@ -17,3 +17,8 @@ export const getProductBySlug = async (slug: any) => {
   });
   return product;
 };
+
+export const getProductAll = async () => {
+  const product = await prisma.product.findMany();
+  return product;
+};

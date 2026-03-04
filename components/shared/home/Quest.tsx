@@ -3,7 +3,7 @@ import Image from "next/image";
 export const Quest = () => {
   return (
     <div>
-      <h1>Daily Quest Board</h1>
+      <h1 className="title">Daily Quest Board</h1>
       <div className="flex gap-10 items-center">
         <div className="flex gap-10 border-2 border-primary">
           <div className="flex">

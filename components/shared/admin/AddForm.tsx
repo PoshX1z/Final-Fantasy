@@ -69,7 +69,7 @@ export const AddForm = () => {
             slug: toSlug(name),
           });
         }}
-        className="border-2 p-2 text-5xl"
+        className="border-2 p-2 "
       />
       <input
         type="text"
@@ -84,7 +84,7 @@ export const AddForm = () => {
             slug,
           });
         }}
-        className="border-2 p-2 text-5xl"
+        className="border-2 p-2 "
       />
       <input
         type="text"
@@ -98,7 +98,7 @@ export const AddForm = () => {
             description,
           });
         }}
-        className="border-2 p-2 text-5xl"
+        className="border-2 p-2 "
       />
       <input
         type="number"
@@ -112,7 +112,7 @@ export const AddForm = () => {
             price,
           });
         }}
-        className="border-2 p-2 text-5xl"
+        className="border-2 p-2 "
       />
       <div>
         <label htmlFor="category-select">Select Category</label>
@@ -204,7 +204,7 @@ export const AddForm = () => {
         name="platformImageIcon"
         readOnly
         value={form.platformImageIcon}
-        className="border-2 p-2 text-5xl"
+        className="border-2 p-2 "
       />
       <div>
         <label htmlFor="edition-select">Select Edition</label>
@@ -242,7 +242,7 @@ export const AddForm = () => {
             developer,
           });
         }}
-        className="border-2 p-2 text-5xl"
+        className="border-2 p-2 "
       />
       <input
         type="text"
@@ -256,7 +256,7 @@ export const AddForm = () => {
             publisher,
           });
         }}
-        className="border-2 p-2 text-5xl"
+        className="border-2 p-2 "
       />
 
       <input
@@ -271,7 +271,7 @@ export const AddForm = () => {
             review,
           });
         }}
-        className="border-2 p-2 text-5xl"
+        className="border-2 p-2 "
       />
       <input
         type="number"
@@ -285,7 +285,7 @@ export const AddForm = () => {
             countInStock,
           });
         }}
-        className="border-2 p-2 text-5xl"
+        className="border-2 p-2 "
       />
       <input
         type="number"
@@ -299,7 +299,7 @@ export const AddForm = () => {
             numSales,
           });
         }}
-        className="border-2 p-2 text-5xl"
+        className="border-2 p-2 "
       />
 
       <div>
@@ -322,7 +322,7 @@ export const AddForm = () => {
         </select>
       </div>
 
-      <input type="file" name="image" className="border-2 p-2 text-5xl" />
+      <input type="file" name="image" className="border-2 p-2 " />
       <input
         type="text"
         placeholder="Release Date..."
@@ -335,7 +335,7 @@ export const AddForm = () => {
             releaseDate,
           });
         }}
-        className="border-2 p-2 text-5xl"
+        className="border-2 p-2 "
       />
       <button
         type="submit"

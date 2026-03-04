@@ -10,8 +10,8 @@ export const Event = () => {
       <div className="absolute top-0 left-20">
         <h1>Limited Time Event</h1>
         <div>
-          <h1 className="text-7xl">Crystal Rebirth Event</h1>
-          <p className="text-4xl">Earn Doubles Gil Rewards This Week</p>
+          <h1 className="text-big">Crystal Rebirth Event</h1>
+          <p>Earn Doubles Gil Rewards This Week</p>
         </div>
       </div>
     </div>

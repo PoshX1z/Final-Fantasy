@@ -9,7 +9,7 @@ export const Header = () => {
   return (
     <div>
       <div className="flex items-center justify-between py-2">
-        <div className="flex items-center">
+        <div className="flex items-center title">
           <Image
             src="/logo.svg"
             width={100}

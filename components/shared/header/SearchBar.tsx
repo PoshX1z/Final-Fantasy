@@ -2,7 +2,7 @@ import { SearchIcon } from "lucide-react";
 
 export const SearchBar = () => {
   return (
-    <div className="flex items-center text-4xl relative">
+    <div className="flex items-center relative">
       <input
         type="text"
         placeholder="Search game..."

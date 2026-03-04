@@ -6,6 +6,10 @@
   --primary: #1d90dd;
   --secondary: #e7b246;
   --accent: #ffffff;
+  --textSmall: 12px;
+  --textMedium: 20px;
+  --textBig: 32px;
+  --textBiggest: 48px;
 }
 
 @theme inline {
@@ -14,11 +18,18 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --accent: var(--accent);
+  --text-small: var(--textSmall);
+  --text-medium: var(--textMedium);
+  --text-big: var(--textBig);
+  --text-biggest: var(--textBiggest);
 }
-
+.title {
+  font-size: var(--textBiggest);
+  font-weight: bold;
+}
 body {
   background-image: url("/bg.png");
   color: var(--foreground);
-  font-size: 60px;
   padding: 0 80px;
+  font-size: var(--textMedium);
 }

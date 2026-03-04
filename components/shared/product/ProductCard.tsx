@@ -4,7 +4,7 @@ import Image from "next/image";
 const ProductCard = ({ product }: { product: IProductInput }) => {
   return (
     <div>
-      <div className="text-5xl border-2 border-primary max-w-80">
+      <div className="border-2 border-primary max-w-80">
         <div>
           <Image
             src={product.image}

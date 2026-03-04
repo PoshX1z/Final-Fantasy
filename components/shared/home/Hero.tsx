@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <div>
+    <div className="text-big">
       <div className="relative">
         <Image
           src="/hero-image.jpg"
@@ -12,11 +12,11 @@ const Hero = () => {
           className="border-primary border-4"
         />
         <div className="absolute top-0 p-20">
-          <h1 className="text-8xl">Final Fantasy VII Rebirth</h1>
+          <h1 className="title">Final Fantasy VII Rebirth</h1>
           <p>An Epic Adventure Awaits</p>
           <p className="flex items-center">
             JRPG | PS5 | PC |
-            <span className="text-4xl">
+            <span className="text-big">
               &#11088; &#11088; &#11088; &#11088; &#11088;{" "}
             </span>
           </p>

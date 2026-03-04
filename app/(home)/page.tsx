@@ -14,7 +14,7 @@ export default async function Home() {
       <Hero />
       <div className="flex">
         <div>
-          <h1>Promotional Games</h1>
+          <h1 className="title">Promotional Games</h1>
           <div className="flex gap-10">
             {promotionalProduct.map((product) => (
               <PromotionalProductCard key={product.slug} product={product} />
@@ -30,7 +30,7 @@ export default async function Home() {
         <Event />
       </div>
       <div>
-        <h1>Featured Games</h1>
+        <h1 className="title">Featured Games</h1>
         {featuredProduct.map((product) => (
           <ProductCard key={product.slug} product={product} />
         ))}

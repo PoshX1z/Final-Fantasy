@@ -7,7 +7,7 @@ const HeaderAdmin = () => {
     <div className="flex justify-between">
       <div className="flex items-center title">
         <Image
-          src="/logo.svg"
+          src="/logo.png"
           width={100}
           height={100}
           alt="logo"

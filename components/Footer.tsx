@@ -7,7 +7,7 @@ export const Footer = () => {
     <div className="flex gap-28 items-baseline justify-between">
       <div className="flex flex-col gap-5">
         <div className="flex items-center">
-          <Image src="/logo.svg" width={70} height={70} alt="logo" />
+          <Image src="/logo.png" width={70} height={70} alt="logo" />
           <h1 className={`${finalFantasyFont.className} title`}>{APP_NAME}</h1>
         </div>
         <p>

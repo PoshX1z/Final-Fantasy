@@ -12,7 +12,7 @@ export const Header = () => {
       <div className="flex items-center justify-between py-2">
         <div className="flex items-center title">
           <Image
-            src="/logo.svg"
+            src="/logo.png"
             width={100}
             height={100}
             alt="logo"

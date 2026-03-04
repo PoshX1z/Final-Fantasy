@@ -4,6 +4,7 @@ import Link from "next/link";
 import { SearchBar } from "./SearchBar";
 import Menu from "./Menu";
 import Navbar from "./Navbar";
+import { finalFantasyFont } from "@/lib/utils";
 
 export const Header = () => {
   return (
@@ -17,7 +18,9 @@ export const Header = () => {
             alt="logo"
             loading="eager"
           />
-          <Link href="/">{APP_NAME}</Link>
+          <Link href="/" className={`${finalFantasyFont.className}`}>
+            {APP_NAME}
+          </Link>
         </div>
         <div className="flex-1 mx-10">
           <SearchBar />

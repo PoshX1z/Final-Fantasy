@@ -22,3 +22,12 @@ export const getProductAll = async () => {
   const product = await prisma.product.findMany();
   return product;
 };
+
+export const getProductByCategory = async (category: any) => {
+  const product = await prisma.product.findMany({
+    where: {
+      category: category,
+    },
+  });
+  return product;
+};

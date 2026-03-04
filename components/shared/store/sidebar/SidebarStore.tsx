@@ -9,6 +9,7 @@ export const SidebarStore = () => {
         <h1>Category Selected</h1>
         <select name="category" className="bg-black">
           Category
+          <option value="all">All</option>
           <option value="action">Action</option>
           <option value="adventure">Adventure</option>
           <option value="rpg">RPG</option>

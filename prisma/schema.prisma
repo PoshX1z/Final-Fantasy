@@ -1,0 +1,89 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Product{
+  id String @id @default(cuid())
+  name String
+  slug String @unique
+  description String
+  price Int
+  image String
+  category ProductCategory @default(action)
+  tag ProductTag @default(normal)
+  platform ProductPlatform @default(steam)
+  platformImageIcon String
+  edition ProductEdition @default(standard)
+  developer String
+  publisher String
+  releaseDate String
+  review Int
+  countInStock Int
+  numSales Int
+  delivery ProductDeliveryType @default(key)
+  createdAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+}
+
+enum ProductCategory{
+action
+adventure
+rpg
+jrpg
+strategy
+simulation
+sports
+racing
+fighting
+shooter
+puzzle
+platformer
+survival
+horror
+stealth
+openWorld
+mmo
+battleRoyald
+storyTelling
+rhythm
+}
+enum ProductPlatform{
+  ea
+  epic
+  microsoft
+  nintendo
+  playstation
+  steam
+  ubisoft
+  xbox
+}
+enum ProductEdition{
+  standard
+  deluxe
+  ultimate
+  premium
+  gold
+  silver
+  platinum
+}
+enum ProductDeliveryType{
+  key
+  account
+}
+enum ProductTag {
+  normal
+  hero
+  promotion
+  featured
+}

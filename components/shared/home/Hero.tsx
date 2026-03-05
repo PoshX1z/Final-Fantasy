@@ -9,7 +9,7 @@ const Hero = () => {
           width={1920}
           height={540}
           alt="hero-image"
-          className="border-primary border-4"
+          className="border-theme"
         />
         <div className="absolute top-0 p-20">
           <h1 className="title">Final Fantasy VII Rebirth</h1>
@@ -21,10 +21,10 @@ const Hero = () => {
             </span>
           </p>
           <div className="flex gap-5 mt-2">
-            <button className="bg-secondary px-20 py-1 rounded-sm">
+            <button className="button-theme-primary px-20 py-1 rounded-sm">
               Buy Now
             </button>
-            <button className="bg-primary px-20 py-1 rounded-sm">
+            <button className="button-theme-secondary px-20 py-1 rounded-sm">
               Learn More
             </button>
           </div>

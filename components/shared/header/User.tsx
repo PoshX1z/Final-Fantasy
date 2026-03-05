@@ -6,8 +6,8 @@ const User = () => {
     <div>
       <Image
         src="/avatar.png"
-        width={70}
-        height={70}
+        width={50}
+        height={50}
         alt="profile-icon"
         className="rounded-full"
       />

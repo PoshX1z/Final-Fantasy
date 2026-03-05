@@ -38,15 +38,15 @@ export const SidebarStore = () => {
               <input
                 type="text"
                 placeholder="from..."
-                className="w-32 border-2 border-secondary"
+                className="w-32 border-2 border-theme"
               />
               <input
                 type="text"
                 placeholder="to..."
-                className="w-32 border-2 border-secondary"
+                className="w-32 border-2 border-theme"
               />
             </div>
-            <button className="border-2 border-primary">Search</button>
+            <button className="border-2 button-theme-primary">Search</button>
           </div>
         </div>
       </div>

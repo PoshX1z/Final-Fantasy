@@ -20,10 +20,9 @@ model Product{
   description String
   price Int
   image String
-  category ProductCategory @default(action)
-  tag ProductTag @default(normal)
-  platform ProductPlatform @default(steam)
-  platformImageIcon String
+  category ProductCategory[]
+  tag ProductTag[]
+  platform ProductPlatform[]
   edition ProductEdition @default(standard)
   developer String
   publisher String
@@ -33,41 +32,64 @@ model Product{
   numSales Int
   delivery ProductDeliveryType @default(key)
   createdAt DateTime @default(now())
-  updateAt DateTime @updatedAt
+  updatedAt DateTime @updatedAt
 }
 
-enum ProductCategory{
-action
-adventure
-rpg
-jrpg
-strategy
-simulation
-sports
-racing
-fighting
-shooter
-puzzle
-platformer
-survival
-horror
-stealth
-openWorld
-mmo
-battleRoyald
-storyTelling
-rhythm
+model Category{
+  id String @id @default(uuid())
+  name String @unique
+  slug String @unique
+
+  products ProductCategory[]
 }
-enum ProductPlatform{
-  ea
-  epic
-  microsoft
-  nintendo
-  playstation
-  steam
-  ubisoft
-  xbox
+
+model ProductCategory{
+  productId String
+  categoryId String
+  
+  product Product @relation(fields: [productId], references: [id])
+  category Category @relation(fields: [categoryId], references: [id])
+
+  @@id([productId, categoryId])
 }
+
+model Tag{
+  id String @id @default(uuid())
+  name String @unique
+  slug String @unique
+
+  products ProductTag[]
+}
+
+model ProductTag{
+  productId String
+  tagId String
+
+  product Product @relation(fields: [productId], references: [id])
+  tag Tag @relation(fields: [tagId], references: [id])
+
+  @@id([productId, tagId])
+}
+
+model Platform{
+  id String @id @default(uuid())
+  name String @unique
+  slug String @unique
+  icon String
+
+  products ProductPlatform[]
+}
+
+model ProductPlatform{
+  productId String
+  platformId String
+
+  product Product @relation(fields: [productId], references: [id])
+  platform Platform @relation(fields: [platformId], references: [id])
+
+  @@id([productId, platformId])
+}
+
 enum ProductEdition{
   standard
   deluxe
@@ -80,10 +102,4 @@ enum ProductEdition{
 enum ProductDeliveryType{
   key
   account
-}
-enum ProductTag {
-  normal
-  hero
-  promotion
-  featured
 }

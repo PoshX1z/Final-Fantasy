@@ -5,9 +5,9 @@ const Hero = () => {
     <div className="text-big">
       <div className="relative">
         <Image
-          src="/hero-image.jpg"
-          width={1920}
-          height={540}
+          src="/hero-image-2.jpeg"
+          width={1280}
+          height={500}
           alt="hero-image"
           className="border-theme"
         />
@@ -20,7 +20,7 @@ const Hero = () => {
               &#11088; &#11088; &#11088; &#11088; &#11088;{" "}
             </span>
           </p>
-          <div className="flex gap-5 mt-2">
+          <div className="flex gap-5 mt-5">
             <button className="button-theme-primary px-20 py-1 rounded-sm">
               Buy Now
             </button>

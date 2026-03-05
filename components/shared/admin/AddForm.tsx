@@ -11,8 +11,9 @@ export const AddForm = () => {
       .from("platform-image-icons")
       .getPublicUrl(`platform-image-icons/${platform}-icon`).data.publicUrl;
 
-  const [categories, setCategories] = useState<string[]>([]);
-
+  const [categories, setCategories] = useState(["action"]);
+  console.log(categories);
+  console.log(typeof categories);
   const handleCategory = (e: any) => {
     const value = e.target.value;
     const checked = e.target.checked;
@@ -27,9 +28,9 @@ export const AddForm = () => {
     description: "",
     price: 1,
     image: "",
-    category: "action",
-    tag: "normal",
-    platform: "ea",
+    categories: categories,
+    tags: "normal",
+    platforms: "ea",
     edition: "standard",
     developer: "",
     publisher: "",

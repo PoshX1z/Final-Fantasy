@@ -20,9 +20,9 @@ model Product{
   description String
   price Int
   image String
-  category ProductCategory[]
-  tag ProductTag[]
-  platform ProductPlatform[]
+  categories ProductCategory[]
+  tags ProductTag[]
+  platforms ProductPlatform[]
   edition ProductEdition @default(standard)
   developer String
   publisher String

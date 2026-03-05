@@ -4,6 +4,7 @@ import Link from "next/link";
 import { SearchBar } from "./SearchBar";
 import Menu from "./Menu";
 import Navbar from "./Navbar";
+import { finalFantasyFont } from "@/lib/utils";
 
 export const Header = () => {
   return (
@@ -11,13 +12,15 @@ export const Header = () => {
       <div className="flex items-center justify-between py-2">
         <div className="flex items-center title">
           <Image
-            src="/logo.svg"
-            width={100}
-            height={100}
+            src="/logo.png"
+            width={80}
+            height={80}
             alt="logo"
             loading="eager"
           />
-          <Link href="/">{APP_NAME}</Link>
+          <Link href="/" className={`${finalFantasyFont.className}`}>
+            {APP_NAME}
+          </Link>
         </div>
         <div className="flex-1 mx-10">
           <SearchBar />

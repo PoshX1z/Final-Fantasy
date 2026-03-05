@@ -9,9 +9,8 @@
   --textSmall: 12px;
   --textMedium: 20px;
   --textBig: 32px;
-  --textBiggest: 48px;
+  --textBiggest: 60px;
 }
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -23,10 +22,72 @@
   --text-big: var(--textBig);
   --text-biggest: var(--textBiggest);
 }
+
 .title {
   font-size: var(--textBiggest);
-  font-weight: bold;
 }
+
+.border-theme {
+  /* From CSS Generator Website */
+  border: 1px solid #82b1ff;
+  background-color: #050b16;
+  box-shadow:
+    0 0 10px #2979ff,
+    0 0 25px #2962ff,
+    0 0 50px #1565c0,
+    0 0 90px #0a2f69,
+    inset 0 0 15px #2979ff,
+    inset 0 0 30px #0a2f69;
+}
+
+.button-theme-primary {
+  /* From CSS Generator Website */
+  background: linear-gradient(135deg, #2b58c4 0%, #152d70 100%);
+  border: 1px solid #82b1ff;
+  box-shadow:
+    0 0 10px #2979ff,
+    0 0 25px #2962ff,
+    0 0 50px #1565c0,
+    0 0 90px #0a2f69,
+    inset 0 0 15px #2979ff,
+    inset 0 0 30px #0a2f69;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button-theme-primary:hover {
+  filter: brightness(120%);
+  transition: all 0.1s;
+}
+
+.button-theme-primary:active {
+  filter: brightness(80%);
+}
+
+.button-theme-secondary {
+  /* From CSS Generator Website */
+
+  background-color: #e7b246;
+  border: 1px solid #fffde0;
+
+  box-shadow:
+    0 0 10px #ffeb3b,
+    0 0 25px #fbc02d,
+    0 0 50px #ef6c00,
+    0 0 90px #4e342e,
+    inset 0 0 15px #ffeb3b,
+    inset 0 0 30px #bf360c;
+}
+
+.button-theme-secondary:hover {
+  filter: brightness(110%);
+  transition: all 0.1s;
+}
+
+.button-theme-secondary:active {
+  filter: brightness(80%);
+}
+
 body {
   background-image: url("/bg.png");
   color: var(--foreground);

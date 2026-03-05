@@ -1,3 +1,5 @@
+import localFont from "next/font/local";
+
 export const toSlug = (name: string) => {
   return name
     .toLowerCase()
@@ -6,3 +8,6 @@ export const toSlug = (name: string) => {
     .replace(/^-+|-+$/g, "")
     .replace(/-+/g, "-");
 };
+export const finalFantasyFont = localFont({
+  src: "./final-fantasy.otf",
+});

@@ -4,7 +4,7 @@ import Image from "next/image";
 const ProductCard = ({ product }: { product: IProductInput }) => {
   return (
     <div>
-      <div className="border-2 border-primary max-w-80">
+      <div className="border-theme max-w-80">
         <div>
           <Image
             src={product.image}
@@ -19,10 +19,10 @@ const ProductCard = ({ product }: { product: IProductInput }) => {
           {product.price} <span>Gil</span>
         </p>
         <div className="flex gap-5">
-          <button className="bg-primary p-5 hover:brightness-90 active:brightness-75">
+          <button className="button-theme-primary p-5 hover:brightness-90 active:brightness-75">
             Buy Now
           </button>
-          <button className="bg-secondary p-5 hover:brightness-90 active:brightness-75">
+          <button className="button-theme-secondary p-5 hover:brightness-90 active:brightness-75">
             Add to Cart
           </button>
         </div>

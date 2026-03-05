@@ -3,7 +3,7 @@ import React from "react";
 
 export const Event = () => {
   return (
-    <div className="relative border-2 border-primary ">
+    <div className="relative border-theme ">
       <div>
         <Image src="/crystal.png" width={500} height={500} alt="event-banner" />
       </div>

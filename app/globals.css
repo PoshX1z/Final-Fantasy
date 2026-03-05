@@ -55,6 +55,15 @@
   transition: all 0.2s ease;
 }
 
+.button-theme-primary:hover {
+  filter: brightness(120%);
+  transition: all 0.1s;
+}
+
+.button-theme-primary:active {
+  filter: brightness(80%);
+}
+
 .button-theme-secondary {
   /* From CSS Generator Website */
 
@@ -69,6 +78,16 @@
     inset 0 0 15px #ffeb3b,
     inset 0 0 30px #bf360c;
 }
+
+.button-theme-secondary:hover {
+  filter: brightness(110%);
+  transition: all 0.1s;
+}
+
+.button-theme-secondary:active {
+  filter: brightness(80%);
+}
+
 body {
   background-image: url("/bg.png");
   color: var(--foreground);

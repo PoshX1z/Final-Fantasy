@@ -8,7 +8,7 @@ export const PromotionalProductCard = ({
 }) => {
   return (
     <div className="flex gap-5">
-      <div className="border-primary border-2 max-w-73">
+      <div className="border-theme border-2 max-w-73">
         <Image
           src={product.image}
           width={292}

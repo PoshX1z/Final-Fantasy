@@ -46,3 +46,4 @@ next-env.d.ts
 app/test/*
 components/test.tsx
 test.ts
+test.html

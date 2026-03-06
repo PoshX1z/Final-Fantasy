@@ -1,1 +1,1 @@
-Hello, my name is Pratchaya Leelanuwat, I am passionate about website develop and prefer gaming. One of my most favorite game is final fantasy, so i made this website to showcase my website developing skills with UX/UI inspired by Final Fantasy. **I'm thai person but i prefer to use English language as a way to communicate since i'm very good at it**.
+This project is aborted, better look to "Posh-Game-Store" proeject instead

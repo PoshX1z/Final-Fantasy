@@ -19,7 +19,7 @@ export const Wallet = () => {
         </p>
       </div>
       <div>
-        <button className="bg-secondary px-30 py-5 text-7xl">
+        <button className="bg-secondary px-30 py-5 text-big font-bold">
           Claim Rewards
         </button>
       </div>

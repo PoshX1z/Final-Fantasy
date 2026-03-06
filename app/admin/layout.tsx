@@ -1,5 +1,6 @@
-import Header from "@/components/shared/admin/Header";
-import { SideBar } from "@/components/shared/admin/SideBar";
+import HeaderAdmin from "@/components/shared/admin/HeaderAdmin";
+import Header from "@/components/shared/admin/HeaderAdmin";
+import { SideBarAdmin } from "@/components/shared/admin/SideBarAdmin";
 
 export default function AdminLayout({
   children,
@@ -9,11 +10,11 @@ export default function AdminLayout({
   return (
     <div>
       <div>
-        <Header />
+        <HeaderAdmin />
       </div>
       <div className="flex">
         <div>
-          <SideBar />
+          <SideBarAdmin />
         </div>
         <main>{children}</main>
       </div>

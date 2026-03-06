@@ -2,12 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const Header = () => {
+const HeaderAdmin = () => {
   return (
     <div className="flex justify-between">
-      <div className="flex items-center">
+      <div className="flex items-center title">
         <Image
-          src="/logo.svg"
+          src="/logo.png"
           width={100}
           height={100}
           alt="logo"
@@ -23,10 +23,10 @@ const Header = () => {
           alt="profile-icon"
           className="rounded-full"
         />
-        <p className="text-5xl">Admin Posh</p>
+        <p className="text-big">Admin Posh</p>
       </div>
     </div>
   );
 };
 
-export default Header;
+export default HeaderAdmin;

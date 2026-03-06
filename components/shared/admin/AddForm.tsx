@@ -11,16 +11,26 @@ export const AddForm = () => {
       .from("platform-image-icons")
       .getPublicUrl(`platform-image-icons/${platform}-icon`).data.publicUrl;
 
+  const [categories, setCategories] = useState(["action"]);
+  console.log(categories);
+  console.log(typeof categories);
+  const handleCategory = (e: any) => {
+    const value = e.target.value;
+    const checked = e.target.checked;
+
+    setCategories((category) =>
+      checked ? [...category, value] : category.filter((cat) => cat !== value),
+    );
+  };
   const [form, setForm] = useState<IProductInput>({
     name: "",
     slug: "",
     description: "",
     price: 1,
     image: "",
-    category: "action",
-    tag: "normal",
-    platform: "ea",
-    platformImageIcon: platformImageIconLocation("ea"),
+    categories: categories,
+    tags: "normal",
+    platforms: "ea",
     edition: "standard",
     developer: "",
     publisher: "",
@@ -30,6 +40,7 @@ export const AddForm = () => {
     numSales: 1,
     delivery: "key",
   });
+
   console.log("normal form", form);
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -69,7 +80,7 @@ export const AddForm = () => {
             slug: toSlug(name),
           });
         }}
-        className="border-2 p-2 text-5xl"
+        className="border-2 p-2 "
       />
       <input
         type="text"
@@ -84,7 +95,7 @@ export const AddForm = () => {
             slug,
           });
         }}
-        className="border-2 p-2 text-5xl"
+        className="border-2 p-2 "
       />
       <input
         type="text"
@@ -98,7 +109,7 @@ export const AddForm = () => {
             description,
           });
         }}
-        className="border-2 p-2 text-5xl"
+        className="border-2 p-2 "
       />
       <input
         type="number"
@@ -112,44 +123,209 @@ export const AddForm = () => {
             price,
           });
         }}
-        className="border-2 p-2 text-5xl"
+        className="border-2 p-2 "
       />
       <div>
-        <label htmlFor="category-select">Select Category</label>
-        <select
-          name="category"
-          value={form.category}
-          id="category-select"
-          onChange={(e) => {
-            const category = e.target.value;
-            setForm({
-              ...form,
-              category,
-            });
-          }}
-          className="border-2 bg-black"
-        >
-          <option value="action">Action</option>
-          <option value="adventure">Adventure</option>
-          <option value="rpg">RPG</option>
-          <option value="jrpg">JRPG</option>
-          <option value="strategy">Strategy</option>
-          <option value="simulation">Simulation</option>
-          <option value="sports">Sports</option>
-          <option value="racing">Racing</option>
-          <option value="fighting">Fighting</option>
-          <option value="shooter">Shooter</option>
-          <option value="puzzle">Puzzle</option>
-          <option value="platformer">Platformer</option>
-          <option value="survival">Survival</option>
-          <option value="horror">Horror</option>
-          <option value="stealth">Stealth</option>
-          <option value="openWorld">OpenWorld</option>
-          <option value="mmo">MMO</option>
-          <option value="battleRoyald">BattleRoyald</option>
-          <option value="storyTelling">StoryTelling</option>
-          <option value="rhythm">Rhythm</option>
-        </select>
+        <label htmlFor="action">
+          <input
+            type="checkbox"
+            name="categories"
+            id="action"
+            value="action"
+            onChange={handleCategory}
+          />
+          Action
+        </label>
+        <label htmlFor="adventure">
+          <input
+            type="checkbox"
+            name="categories"
+            id="adventure"
+            value="adventure"
+            onChange={handleCategory}
+          />
+          Adventure
+        </label>
+        <label htmlFor="rpg">
+          <input
+            type="checkbox"
+            name="categories"
+            id="rpg"
+            value="rpg"
+            onChange={handleCategory}
+          />
+          RPG
+        </label>
+        <label htmlFor="jrpg">
+          <input
+            type="checkbox"
+            name="categories"
+            id="jrpg"
+            value="jrpg"
+            onChange={handleCategory}
+          />
+          JRPG
+        </label>
+        <label htmlFor="strategy">
+          <input
+            type="checkbox"
+            name="categories"
+            id="strategy"
+            value="strategy"
+            onChange={handleCategory}
+          />
+          Strategy
+        </label>
+        <label htmlFor="simulation">
+          <input
+            type="checkbox"
+            name="categories"
+            id="simulation"
+            value="simulation"
+            onChange={handleCategory}
+          />
+          Simulation
+        </label>
+        <label htmlFor="sports">
+          <input
+            type="checkbox"
+            name="categories"
+            id="sports"
+            value="sports"
+            onChange={handleCategory}
+          />
+          Sports
+        </label>
+        <label htmlFor="racing">
+          <input
+            type="checkbox"
+            name="categories"
+            id="racing"
+            value="racing"
+            onChange={handleCategory}
+          />
+          Racing
+        </label>
+        <label htmlFor="fighting">
+          <input
+            type="checkbox"
+            name="categories"
+            id="fighting"
+            value="fighting"
+            onChange={handleCategory}
+          />
+          Fighting
+        </label>
+        <label htmlFor="shooter">
+          <input
+            type="checkbox"
+            name="categories"
+            id="shooter"
+            value="shooter"
+            onChange={handleCategory}
+          />
+          Shooter
+        </label>
+        <label htmlFor="puzzle">
+          <input
+            type="checkbox"
+            name="categories"
+            id="puzzle"
+            value="puzzle"
+            onChange={handleCategory}
+          />
+          Puzzle
+        </label>
+        <label htmlFor="platformer">
+          <input
+            type="checkbox"
+            name="categories"
+            id="platformer"
+            value="platformer"
+            onChange={handleCategory}
+          />
+          Platformer
+        </label>
+        <label htmlFor="survival">
+          <input
+            type="checkbox"
+            name="categories"
+            id="survival"
+            value="survival"
+            onChange={handleCategory}
+          />
+          Survival
+        </label>
+        <label htmlFor="horror">
+          <input
+            type="checkbox"
+            name="categories"
+            id="horror"
+            value="horror"
+            onChange={handleCategory}
+          />
+          Horror
+        </label>
+        <label htmlFor="stealth">
+          <input
+            type="checkbox"
+            name="categories"
+            id="stealth"
+            value="stealth"
+            onChange={handleCategory}
+          />
+          Stealth
+        </label>
+        <label htmlFor="openWorld">
+          <input
+            type="checkbox"
+            name="categories"
+            id="openWorld"
+            value="openWorld"
+            onChange={handleCategory}
+          />
+          Open World
+        </label>
+        <label htmlFor="mmo">
+          <input
+            type="checkbox"
+            name="categories"
+            id="mmo"
+            value="mmo"
+            onChange={handleCategory}
+          />
+          MMO
+        </label>
+        <label htmlFor="battleRoyald">
+          <input
+            type="checkbox"
+            name="categories"
+            id="battleRoyald"
+            value="battleRoyald"
+            onChange={handleCategory}
+          />
+          Battle Royald
+        </label>
+        <label htmlFor="storyTelling">
+          <input
+            type="checkbox"
+            name="categories"
+            id="storyTelling"
+            value="storyTelling"
+            onChange={handleCategory}
+          />
+          Story Telling
+        </label>
+        <label htmlFor="rhythm">
+          <input
+            type="checkbox"
+            name="categories"
+            id="rhythm"
+            value="rhythm"
+            onChange={handleCategory}
+          />
+          Rhythm
+        </label>
       </div>
       <div>
         <label htmlFor="tag-select">Select Tag Of Product</label>
@@ -183,7 +359,6 @@ export const AddForm = () => {
             setForm({
               ...form,
               platform,
-              platformImageIcon: platformImageIconLocation(platform),
             });
           }}
           className="border-2 bg-black"
@@ -198,14 +373,6 @@ export const AddForm = () => {
           <option value="xbox">Xbox</option>
         </select>
       </div>
-      <input
-        type="hidden"
-        placeholder="Platform Image Icon..."
-        name="platformImageIcon"
-        readOnly
-        value={form.platformImageIcon}
-        className="border-2 p-2 text-5xl"
-      />
       <div>
         <label htmlFor="edition-select">Select Edition</label>
         <select
@@ -242,7 +409,7 @@ export const AddForm = () => {
             developer,
           });
         }}
-        className="border-2 p-2 text-5xl"
+        className="border-2 p-2 "
       />
       <input
         type="text"
@@ -256,7 +423,7 @@ export const AddForm = () => {
             publisher,
           });
         }}
-        className="border-2 p-2 text-5xl"
+        className="border-2 p-2 "
       />
 
       <input
@@ -271,7 +438,7 @@ export const AddForm = () => {
             review,
           });
         }}
-        className="border-2 p-2 text-5xl"
+        className="border-2 p-2 "
       />
       <input
         type="number"
@@ -285,7 +452,7 @@ export const AddForm = () => {
             countInStock,
           });
         }}
-        className="border-2 p-2 text-5xl"
+        className="border-2 p-2 "
       />
       <input
         type="number"
@@ -299,7 +466,7 @@ export const AddForm = () => {
             numSales,
           });
         }}
-        className="border-2 p-2 text-5xl"
+        className="border-2 p-2 "
       />
 
       <div>
@@ -322,7 +489,7 @@ export const AddForm = () => {
         </select>
       </div>
 
-      <input type="file" name="image" className="border-2 p-2 text-5xl" />
+      <input type="file" name="image" className="border-2 p-2 " />
       <input
         type="text"
         placeholder="Release Date..."
@@ -335,7 +502,7 @@ export const AddForm = () => {
             releaseDate,
           });
         }}
-        className="border-2 p-2 text-5xl"
+        className="border-2 p-2 "
       />
       <button
         type="submit"

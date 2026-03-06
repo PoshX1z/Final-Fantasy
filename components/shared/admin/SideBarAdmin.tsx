@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-export const SideBar = () => {
+export const SideBarAdmin = () => {
   return (
     <div>
-      <ul>
+      <ul className="text-big">
         <Link href="/admin/dashboard">
           <li>Dashboard</li>
         </Link>

@@ -1,13 +1,14 @@
 import { APP_NAME } from "@/lib/constants";
+import { finalFantasyFont } from "@/lib/utils";
 import Image from "next/image";
 
 export const Footer = () => {
   return (
-    <div className="text-5xl flex gap-28 items-baseline justify-between">
+    <div className="flex gap-28 items-baseline justify-between">
       <div className="flex flex-col gap-5">
         <div className="flex items-center">
-          <Image src="/logo.svg" width={70} height={70} alt="logo" />
-          <h1>{APP_NAME}</h1>
+          <Image src="/logo.png" width={70} height={70} alt="logo" />
+          <h1 className={`${finalFantasyFont.className} title`}>{APP_NAME}</h1>
         </div>
         <p>
           Buy games with Gil. Earn daily rewards <br /> and unlock your next

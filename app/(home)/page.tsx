@@ -4,6 +4,7 @@ import { Quest } from "@/components/shared/home/Quest";
 import { Wallet } from "@/components/shared/home/Wallet";
 import ProductCard from "@/components/shared/product/ProductCard";
 import { PromotionalProductCard } from "@/components/shared/product/PromotionalProductCard";
+import { finalFantasyFont } from "@/lib/utils";
 import { getProductByTag } from "@/prisma/actions/product.actions";
 
 export default async function Home() {
@@ -14,7 +15,9 @@ export default async function Home() {
       <Hero />
       <div className="flex">
         <div>
-          <h1>Promotional Games</h1>
+          <h1 className={`${finalFantasyFont.className} title`}>
+            Promotional Games
+          </h1>
           <div className="flex gap-10">
             {promotionalProduct.map((product) => (
               <PromotionalProductCard key={product.slug} product={product} />
@@ -30,7 +33,9 @@ export default async function Home() {
         <Event />
       </div>
       <div>
-        <h1>Featured Games</h1>
+        <h1 className={`${finalFantasyFont.className} title`}>
+          Featured Games
+        </h1>
         {featuredProduct.map((product) => (
           <ProductCard key={product.slug} product={product} />
         ))}

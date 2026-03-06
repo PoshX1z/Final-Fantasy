@@ -1,9 +1,6 @@
 import {
-  ProductCategory,
   ProductDeliveryType,
   ProductEdition,
-  ProductPlatform,
-  ProductTag,
 } from "@/app/generated/prisma/enums";
 import prisma from "@/prisma/prisma";
 import { NextRequest, NextResponse } from "next/server";
@@ -17,7 +14,6 @@ export async function POST(req: NextRequest) {
   const category = formData.get("category") as string;
   const tag = formData.get("tag") as string;
   const platform = formData.get("platform") as string;
-  const platformImageIcon = formData.get("platformImageIcon") as string;
   const edition = formData.get("edition") as string;
   const description = formData.get("description") as string;
   const price = Number(formData.get("price"));
@@ -33,10 +29,9 @@ export async function POST(req: NextRequest) {
       name,
       slug,
       image,
-      category: category as ProductCategory,
+      category,
       tag: tag as ProductTag,
       platform: platform as ProductPlatform,
-      platformImageIcon,
       edition: edition as ProductEdition,
       description,
       price,
@@ -71,7 +66,6 @@ export async function PATCH(req: NextRequest) {
   const category = formData.get("category") as string;
   const tag = formData.get("tag") as string;
   const platform = formData.get("platform") as string;
-  const platformImageIcon = formData.get("platformImageIcon") as string;
   const edition = formData.get("edition") as string;
   const description = formData.get("description") as string;
   const price = Number(formData.get("price"));
@@ -93,7 +87,6 @@ export async function PATCH(req: NextRequest) {
       category: category as ProductCategory,
       tag: tag as ProductTag,
       platform: platform as ProductPlatform,
-      platformImageIcon: platformImageIcon,
       edition: edition as ProductEdition,
       description: description,
       price: price,
